@@ -5,7 +5,22 @@ sources:
     tables: 
       - name: sales
         identifier: raw_gz_sales
+        description: sales of Greenweez / we have on row per product_id found in each orders_id
+        columns:
+          - name: date_date
+            description: date of purchase
+          - name: orders_id
       - name: product
         identifier: raw_gz_product
+        description: product of Greenweez / we have on row per products_id 
+        columns:
+          - name: products_id
+            tests:
+              - unique
       - name: ship
         identifier: raw_gz_ship
+        description: ship of Greenweez / we have on row per order_id 
+        columns:
+          - name: orders_id
+            tests:
+              - unique
