@@ -24,3 +24,22 @@ sources:
           - name: orders_id
             tests:
               - unique
+      - name: adwords
+        identifier: raw_gz_adwords
+        description: camp of adwors
+        columns:
+          - name: date_date
+            tests:
+              - unique
+              - not_null
+      - name: bing
+        identifier: raw_gz_bing
+      - name: criteo
+        identifier: raw_gz_criteo
+      - name: facebook
+        identifier: raw_gz_facebook
+      - name: int_campaingns
+        description: union all des toutes les campagnes (adwors, criteo, bing & facebook)
+      - name: int_campaigns_day
+        description: int_campaingns grouper par date du jour
+          
