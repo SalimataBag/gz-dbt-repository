@@ -1,4 +1,5 @@
-WITH sub1 as (
+WITH sub1 as 
+(
     SELECT o.*,
     s.* EXCEPT(orders_id)       
     FROM {{ ref('int_orders_margin') }} as o

@@ -21,5 +21,13 @@ WITH sub1 as (
     FROM sub1
 )
 SELECT 
+sub2.date_date,
+        sub2.orders_id,
+        sub2.products_id,
+        sub2.revenue,
+        sub2.quantity,
+        sub2.purchase_price,
+        sub2.purchase_cost,
+        sub2.margin,
  {{ margin_percent ('margin','revenue') }} AS margin_percent
  FROM sub2
