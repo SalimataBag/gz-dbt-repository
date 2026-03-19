@@ -11,5 +11,8 @@ SELECT
     sub1.revenue, 
     sub1.margin,
     sub1.purchase_cost,
+    sub1.shipping_fee,
+    sub1.logcost,
+    sub1.quantity,
     ((sub1.margin+ sub1.shipping_fee)-(sub1.logcost + sub1.ship_cost)) as Operational_margin
 FROM sub1
