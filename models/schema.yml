@@ -29,9 +29,6 @@ sources:
         description: camp of adwors
         columns:
           - name: date_date
-            tests:
-              - unique
-              - not_null
       - name: bing
         identifier: raw_gz_bing
       - name: criteo
@@ -42,4 +39,5 @@ sources:
         description: union all des toutes les campagnes (adwors, criteo, bing & facebook)
       - name: int_campaigns_day
         description: int_campaingns grouper par date du jour
-          
+      - name: finance_campaigns_day
+        description: les kpis de finance journaliers

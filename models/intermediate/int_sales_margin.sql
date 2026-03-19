@@ -8,7 +8,7 @@ WITH sub1 as (
     FROM {{ ref('stg_gz__sales') }} as sales
     INNER JOIN {{ ref('stg_gz__product') }} as product
     ON sales.products_id = product.products_id
-)
+), sub2 AS(
     SELECT
         sub1.date_date,
         sub1.orders_id,
@@ -19,3 +19,7 @@ WITH sub1 as (
         ,ROUND(safe_multiply(quantity, purchase_price),2) as purchase_cost
         ,ROUND(safe_subtract(revenue, (Safe_multiply(quantity, purchase_price))), 2) AS margin
     FROM sub1
+)
+SELECT 
+ {{ margin_percent ('margin','revenue') }} AS margin_percent
+ FROM sub2
